@@ -15,6 +15,12 @@ export default function Home() {
                 <li><Link href="day1/03_state">03 State</Link></li>
                 <li><Link href="day1/04_next_routing">03 Next Routing</Link></li>
             </ul>
+            <h2>Day 2 (Day 1 の復習)</h2>
+            <ul>
+                <li><Link href="day2/00_func_component">00 Function Component</Link></li>
+                <li><Link href="day2/01_props">01 Props</Link></li>
+                <li><Link href="day2/02_state">02 State</Link></li>
+            </ul>
         </nav>
     </main>
   );
