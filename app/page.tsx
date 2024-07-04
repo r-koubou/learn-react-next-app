@@ -27,6 +27,16 @@ export default function Home() {
                 <li><Link href="day3/01_conditional_rendering">01 Conditional Rendering</Link></li>
                 <li><Link href="day3/02_list_rendering">02 List Rendering</Link></li>
             </ul>
+            <h2>Day 4</h2>
+            <ul>
+                <li>00 Pages and Routing</li>
+                <ul>
+                    <li><Link href="day4/00_pages_and_routing">00_pages_and_routing</Link></li>
+                    <li><Link href="day4/00_pages_and_routing/about">00_pages_and_routing/about</Link></li>
+                </ul>
+                <li><Link href="day4/01_link_component">01_link_component</Link></li>
+                <li><Link href="day4/02_image_component">02_image_component</Link></li>
+            </ul>
         </nav>
     </main>
   );
