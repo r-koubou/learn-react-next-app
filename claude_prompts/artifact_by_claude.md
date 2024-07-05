@@ -42,8 +42,8 @@
 2. Link コンポーネントを使用した画面遷移
 3. Image コンポーネントを使用した画像の最適化
 4. APIルートの作成と使用
-5. getStaticProps を使用した静的生成
-6. getServerSideProps を使用したサーバーサイドレンダリング
+5. 静的生成とISR（Incremental Static Regeneration）
+6. サーバーサイドレンダリング（SSR）と動的ルート
 
 ## Day 6: スタイリングとレイアウト
 
