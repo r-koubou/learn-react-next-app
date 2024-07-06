@@ -1,5 +1,7 @@
 import { cache } from "react";
 
+import { BackToTop } from "@/app/components/BackToTop";
+
 type Params = {
     id: string;
 }
@@ -25,6 +27,8 @@ export default async function ServerSideRenderedPage({ params } : { params: Para
             <h1>Server Side Rendered Page</h1>
             <p>Data: {JSON.stringify(data)}</p>
             <p>This page was rendered at: {new Date().toISOString()}</p>
+
+            <BackToTop />
         </div>
     );
 }
