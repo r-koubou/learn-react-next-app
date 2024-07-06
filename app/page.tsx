@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-    <main>
+    <div className="container">
         <h1>Learn React, Next.js Demo</h1>
         <nav>
             <h2>Day 1</h2>
@@ -45,7 +45,13 @@ export default function Home() {
                 <li><Link href="day5/03_isr">03 ISR</Link></li>
                 <li><Link href="day5/04_server_side_rendering/1">04 Server Side Rendering</Link></li>
             </ul>
+            <h2>Day 6</h2>
+            <ul>
+                <li><Link href="day6/00_css_modules">00 CSS Modules</Link></li>
+                <li><Link href="day6/01_global_styles">01 Global Styles</Link></li>
+                <li><Link href="day6/02_layout_component">02 Layout Component</Link></li>
+            </ul>
         </nav>
-    </main>
+    </div>
   );
 }
