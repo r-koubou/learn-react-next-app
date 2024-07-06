@@ -1,4 +1,4 @@
-React + Next.js の学習ロードマップ Day n
+React + Next.js の学習ロードマップ Day n を実施してください。
 
 ## 使用バージョン
 
