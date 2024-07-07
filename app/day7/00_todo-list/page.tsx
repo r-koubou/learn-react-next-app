@@ -17,6 +17,8 @@ export default function TodoList() {
     const [todos, setTodos] = useState<Todo[]>([]);
     const [newTodo, setNewTodo] = useState<string>('');
 
+    const [todosMounted, setTodosMounted] = useState<boolean>(false);
+
     useEffect(() => {
         const storedTodos = localStorage.getItem('todos');
         console.log('Getting todos from localStorage');
@@ -25,8 +27,8 @@ export default function TodoList() {
             try {
                 const parsedTodos = JSON.parse(storedTodos);
                 if(parsedTodos) {
-                    setTodos( parsedTodos as Todo[] );
-                    console.log(`todos: ${parsedTodos as Todo[]}`);
+                    setTodos( _ => parsedTodos as Todo[] );
+                    console.log(`todos: ${storedTodos}`);
                 }
             } catch (e) {
                 console.error('Failed to parse todos from localStorage');
@@ -36,8 +38,8 @@ export default function TodoList() {
 
     // Todoリストが更新されたらローカルストレージに保存
     useEffect(() => {
-        if(todos.length === 0) {
-            localStorage.removeItem('todos');
+        if(!todosMounted) {
+            setTodosMounted( _ => true );
             return;
         }
         const json = JSON.stringify(todos);
@@ -47,14 +49,14 @@ export default function TodoList() {
 
     const addTodo = () => {
         if( newTodo.trim() !== '') {
-            setTodos( [...todos, {id: Date.now(), text: newTodo, completed: false}]);
+            setTodos( current => [...current, {id: Date.now(), text: newTodo, completed: false}]);
             setNewTodo('');
         }
     };
 
     const toggleTodo = (id: number) => {
         console.log('Toggling todo: ' + id);
-        setTodos( todos.map(todo =>
+        setTodos( current => current.map(todo =>
             todo.id === id ? {
                 ...todo, completed: !todo.completed
             } : todo
@@ -63,7 +65,7 @@ export default function TodoList() {
 
     const deleteTodo = (id: number) => {
         console.log('Deleting todo: ' + id);
-        setTodos( todos.filter(todo => todo.id !== id));
+        setTodos( current => current.filter(todo => todo.id !== id));
     };
 
     const handleChangeNewTodo = (e: React.ChangeEvent<HTMLInputElement> ) => {
@@ -88,9 +90,8 @@ export default function TodoList() {
             </div>
             <ul>
                 {todos.map( todo => (
-                    <li className={`flex items-center justify-between p-2 ${todo.completed ? 'line-through text-black-500' : ''}`}>
+                    <li key={todo.id} className={`flex items-center justify-between p-2 ${todo.completed ? 'line-through text-black-500' : ''}`}>
                         <TodoItem
-                            key={todo.id}
                             {...todo}
                             onToggle={toggleTodo}
                             onDelete={deleteTodo}
