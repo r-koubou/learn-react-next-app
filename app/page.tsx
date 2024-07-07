@@ -51,6 +51,10 @@ export default function Home() {
                 <li><Link href="day6/01_global_styles">01 Global Styles</Link></li>
                 <li><Link href="day6/02_layout_component">02 Layout Component</Link></li>
             </ul>
+            <h2>Day 7</h2>
+            <ul>
+                <li><Link href="day7/00_todo-list">00 Todo List</Link></li>
+            </ul>
         </nav>
     </div>
   );
