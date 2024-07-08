@@ -53,7 +53,7 @@ export default function Home() {
             </ul>
             <h2>Day 7</h2>
             <ul>
-                <li><Link href="day7/00_todo-list">00 Todo List</Link></li>
+                <li>See the respective repositories.</li>
             </ul>
         </nav>
     </div>
